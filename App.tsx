@@ -12,6 +12,9 @@ import { useFonts, DeliusSwashCaps_400Regular } from "@expo-google-fonts/delius-
 //Menu SOBRE
 import TelaSobre from "./telas/Sobre"
 
+//Menu PERFIL
+import TelaPerfil from "./telas/Perfil/Index";
+
 //Menu PRODUTOS
 import TelaProduto from "./telas/Produtos/Index"
 import ListaProdutos from "./telas/mocks/listaProdutos"
@@ -45,7 +48,7 @@ function Menu(){
           >
             <Tab.Screen name="Sobre" component={TelaSobre}/>
             <Tab.Screen name="Produtos" component={MenuProdutos}/>
-            <Tab.Screen name="Perfil" component={TelaSobre}/>
+            <Tab.Screen name="Perfil" component={TelaPerfil}/>
         </Tab.Navigator>
 }
 

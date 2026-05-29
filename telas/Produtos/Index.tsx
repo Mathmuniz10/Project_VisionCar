@@ -10,7 +10,8 @@ export default function Index({itens}:any){
     
     // Obter anos únicos dos carros
     const anosDisponiveis = useMemo(() => {
-        return [...new Set(itens.lista.map((carro: any) => carro.ano))].sort((a, b) => b - a);
+        const anos = [...new Set(itens.lista.map((carro: any) => carro.ano))] as number[];
+        return anos.sort((a, b) => b - a);
     }, [itens.lista]);
     
     // Filtrar produtos baseado no ano selecionado
@@ -35,7 +36,7 @@ export default function Index({itens}:any){
                     ]}
                     onPress={() => setAnoSelecionado(null)}
                 >
-                    <Texto estiloEspecifico={[
+                    <Texto style={[
                         styles.textoFiltro,
                         anoSelecionado === null && styles.textoFiltroAtivo
                     ]}>
@@ -43,16 +44,16 @@ export default function Index({itens}:any){
                     </Texto>
                 </TouchableOpacity>
                 
-                {anosDisponiveis.map((ano) => (
+                {anosDisponiveis.map((ano: number) => (
                     <TouchableOpacity
-                        key={ano}
+                        key={ano.toString()}
                         style={[
                             styles.botaoFiltro,
                             anoSelecionado === ano && styles.botaoFiltroAtivo
                         ]}
                         onPress={() => setAnoSelecionado(ano)}
                     >
-                        <Texto estiloEspecifico={[
+                        <Texto style={[
                             styles.textoFiltro,
                             anoSelecionado === ano && styles.textoFiltroAtivo
                         ]}>
@@ -64,7 +65,7 @@ export default function Index({itens}:any){
             
             <FlatList
                 data={produtosFiltrados}
-                renderItem={({item})=> <CadaProduto produto={item} />}
+                renderItem={({item})=> <CadaProduto item={item} />}
                 keyExtractor={(item) => item.id.toString()}
             />
         </View>

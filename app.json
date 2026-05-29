@@ -4,11 +4,11 @@
     "slug": "visionCar",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoVISION.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logoVISION.png",
       "resizeMode": "contain",
       "backgroundColor": "#1a1a1a"
     },
@@ -20,7 +20,7 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logoVISION.png"
     },
     "plugins": [
       "expo-video",
